@@ -1677,7 +1677,7 @@ open class Swiftcord {
     ) async throws -> Message {
         let jsonData = try! self.encoder.encode(EmbedBody(embeds: embeds))
 
-        let data = try! await self.requestWithBodyAsData(.createMessage(channelId), body: jsonData)
+        let data = try await self.requestWithBodyAsData(.createMessage(channelId), body: jsonData)
 
         return Message(self, data as! [String: Any])
     }
